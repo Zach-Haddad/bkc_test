@@ -6816,3 +6816,7 @@ button.close {
 .comment {
   margin: 8px;
 }
+
+.user-id {
+  width: 100px;
+}
