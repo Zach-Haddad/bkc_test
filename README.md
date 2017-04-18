@@ -1,4 +1,4 @@
-#Ben Kinney Companies Code Sample
+# Ben Kinney Companies Code Sample
 
 [Live](https://bkcsample.herokuapp.com/)
 
