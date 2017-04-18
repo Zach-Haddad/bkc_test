@@ -10,11 +10,11 @@ feature "signing up" do
   feature "signing up a user" do
     before(:each) do
       visit new_user_registration_url
-      fill_in 'user_email', :with => "sample@test.com"
-      fill_in 'user_fname', :with => "John"
-      fill_in 'user_lname', :with => "Smith"
-      fill_in 'user_password', :with => "password"
-      fill_in 'user_password_confirmation', :with => "password"
+      fill_in 'user_email', with: "sample@test.com"
+      fill_in 'user_fname', with: "John"
+      fill_in 'user_lname', with: "Smith"
+      fill_in 'user_password', with: "password"
+      fill_in 'user_password_confirmation', with: "password"
       click_button "Sign up"
     end
 
@@ -24,6 +24,12 @@ feature "signing up" do
 
     scenario "shows username on the homepage after signup" do
       expect(page).to have_content "John Smith"
+    end
+
+    scenario "allows user to create a post after signin" do
+      expect(page).to have_content "Create Post"
+      click_link "Create Post"
+      expect(page).to have_content "New Post"
     end
   end
 

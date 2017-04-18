@@ -11,7 +11,7 @@
 
   <label>
     Title:
-    <input class="post-title" name="post[title]" value="<%= post.title %>">
+    <input id="new-post-title" class="post-title" name="post[title]" value="<%= post.title %>">
   </label>
   <br/>
   <br/>
@@ -23,6 +23,6 @@
   </label>
   <br>
 
-  <input type="Submit" value="Submit">
-  <%=link_to "Cancel", cancel_url%>
+  <input type="Submit" value="Submit" id="submit" class="btn btn-info">
+  <%=link_to "Cancel", cancel_url, class:"btn btn-danger"%>
 </form>
