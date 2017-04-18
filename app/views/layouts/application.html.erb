@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BKC Coding Challenge</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <script src="https://use.fontawesome.com/d3d6fa43ff.js"></script>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="errors">
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="notices">
+      <% if flash[:notices] %>
+        <% flash[:notices].each do |notice| %>
+          <%= notice %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="navbar navbar-default">
+      <div class="container">
+        <div class="project-title navbar-text pull-left">
+          <h4>BKC Code Sample</h4>
+        </div>
+        <div class="navbar-text pull-right">
+          <%= link_to "Home", root_url, class:"btn" %>
+          <% if current_user %>
+          <%= link_to "Create Post", new_post_url, class:"btn"%>
+          <%= current_user.fname + " " + current_user.lname %>
+          <%= link_to "Logout", destroy_user_session_url, method: :delete, class:"btn" %>
+          <% else %>
+            <%= link_to "Sign in", new_user_session_path, class:"btn" %>
+            <%= link_to "Sign up", new_user_registration_url, class:"btn" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <%= yield %>
+    </div>
+
+
+  </div>
+    <div class="navbar-default footer">
+        <div class="container">
+          <p class="navbar-text pull-left">Created By Zach Haddad</p>
+
+          <a href='https://github.com/Zach-Haddad' target="_blank"><i class="fa fa-github-square fa-3x pull-right" aria-hidden="true"></i></a>
+          <a href='https://linkedin.com/in/zach-haddad' target="_blank"><i class="fa fa-linkedin-square fa-3x pull-right" aria-hidden="true"></i></a>
+          <a href='http://zach-haddad.com' target="_blank"><i class="fa fa-folder fa-3x pull-right" aria-hidden="true"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>

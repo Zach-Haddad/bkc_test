@@ -1,0 +1,16 @@
+<div class="post-table">
+  <div class="table-row heading">
+    <div class="table-column title header">Post Title</div>
+    <div class="table-column date header">Date</div>
+    <div class="table-column author header">Author</div>
+    <div class="table-column replies header">Replies</div>
+  </div>
+  <% @posts.each do |post| %>
+    <div class="table-row table-content-row">
+      <div class="table-column title"><%=link_to post.title, post%></div>
+      <div class="table-column date"><%=post.created_at%></div>
+      <div class="table-column author"><%=post.author.fname + ' ' + post.author.lname%></div>
+      <div class="table-column replies"><%=post.comments.count%></div>
+    </div>
+  <% end %>
+</div>

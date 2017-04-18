@@ -1,0 +1,18 @@
+<% action_url = comment.persisted? ? post_comment_url(post, comment) : post_comments_url %>
+<% http_method = comment.persisted? ? "PATCH" : "POST" %>
+
+<form action="<%= action_url %>" method="POST">
+  <input type="hidden" name="_method" value="<%= http_method %>">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+  <label>
+    <textarea name="comment[body]"><%= comment.body %></textarea>
+  </label>
+  <br>
+
+  <input type="Submit" value="Submit">
+  <%=link_to "Cancel", post_url(comment.post_id)%>
+</form>
