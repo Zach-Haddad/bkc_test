@@ -13,6 +13,9 @@
 <h4>Comments</h4>
 
 <div class="comments">
+  <% if @comments.empty? %>
+    <p>No comments to display</p>
+  <% end %>
   <% @comments.each do |comment| %>
     <% author = comment.author %>
     <div class="comment">

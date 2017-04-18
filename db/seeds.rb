@@ -18,6 +18,19 @@ Post.create(title:"First Post",
   body:"This is my first post here, please be easy on me!",
   user_id:1)
 
+
+15.times do
+  Post.create(title: Faker::Lorem.sentence,
+    body: Faker::Lorem.paragraph,
+    user_id: rand(8))
+end
+
 Comment.create(body:"You are doing great!",
   user_id:2,
   post_id:1)
+
+50.times do
+  Comment.create(
+    body: Faker::Lorem.paragraph,
+    user_id: rand(7), post_id:rand(16))
+end

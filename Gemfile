@@ -23,6 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'will_paginate'
+gem 'faker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -41,7 +42,6 @@ end
 
 group :test do
   gem 'factory_girl_rails', require: false
-  gem 'faker'
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers'
