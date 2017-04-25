@@ -9,6 +9,8 @@
   <script src="https://use.fontawesome.com/d3d6fa43ff.js"></script>
 </head>
 <body>
+  <%= render "devise/registrations/new" %>
+
   <div class="wrap">
 
     <div class="errors">
@@ -40,6 +42,7 @@
           <% else %>
             <%= link_to "Sign in", new_user_session_path, class:"btn btn-success" %>
             <%= link_to "Sign up", new_user_registration_url, class:"btn btn-warning" %>
+            <%= link_to "Sign up", "#sign_up", "data-toggle" => "modal", :class => 'btn btn-small btn-success' %>
           <% end %>
         </div>
         <div class="user-id navbar-text pull-right">
