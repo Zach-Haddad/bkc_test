@@ -5,7 +5,7 @@
   <div class="author-options">
     <% if current_user == @post.author %>
     <%= link_to "Edit Post", edit_post_url %>
-    <%= link_to "Delete Post", post_url, method: :delete %>
+    <%= link_to "Delete Post", post_url, method: :delete, data: { confirm: 'This action cannot be undone.  Are you sure you want to delete your post?' } %>
     <% end %>
   </div>
 </div>
@@ -25,7 +25,7 @@
       <div class="author-options">
         <% if current_user == comment.author %>
         <%= link_to "Edit Comment", edit_post_comment_url(@post, comment) %>
-        <%= link_to "Delete Comment", post_comment_url(@post, comment), method: :delete %>
+        <%= link_to "Delete Comment", post_comment_url(@post, comment), method: :delete, data: { confirm: 'This action cannot be undone.  Are you sure you want to delete your comment?' } %>
         <% end %>
       </div>
     </div>
