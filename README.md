@@ -8,4 +8,5 @@ This is a simple message board application made with Ruby on Rails with a Postgr
 
 ### Future Features
 - [x] Work on implementing Devise sign-in/sign-up views with Bootstrap modals
+- [ ] Proper error rendering within devise modals
 - [ ] Pagination for posts, comments
