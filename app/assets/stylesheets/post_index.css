@@ -49,15 +49,7 @@
   text-align: center;
 }
 
-.post, .comments {
-  border: 2px solid black;
-  padding: 5px;
-}
-
-.comment {
-  margin: 8px;
-}
-
+/*navbar*/
 .user-id {
   width: 100px;
 }

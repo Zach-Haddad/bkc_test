@@ -43,5 +43,9 @@
     <% end %>
   </div>
 
-  <%= render "devise/shared/links" %>
+  <div class="modal-footer">
+    <p>Already have an account?
+      <%= link_to "Sign in", "#sign_in", "data-toggle": "modal", "data-dismiss":"modal"%>
+      instead. </p>
+  </div>
 </div>
