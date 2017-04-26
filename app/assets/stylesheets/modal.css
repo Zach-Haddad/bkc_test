@@ -1,0 +1,22 @@
+.modal-container{
+  width: 25%;
+  margin: 0 auto;
+  margin-top: 5%;
+  background-color: #fff;
+  opacity: 0.9;
+  padding: 10px;
+  border: 5px solid black;
+  text-align: center;
+}
+
+.field{
+  padding: 2px;
+}
+
+.password-confirm{
+  margin-bottom: 10px;
+}
+
+.form-btn{
+  width: 90%;
+}

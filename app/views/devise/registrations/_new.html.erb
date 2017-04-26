@@ -1,51 +1,52 @@
 <div class="modal fade in" id="sign_up">
+  <div class="modal-container">
+    <div class="modal-header">
+      <button class="close" data-dismiss="modal">x</button>
+      <h2>Sign up</h2>
+    </div>
 
-  <div class="modal-header">
-    <button class="close" data-dismiss="modal">x</button>
-    <h2>Sign up</h2>
-  </div>
+    <div class="modal-body">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-  <div class="modal-body">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
 
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div>
+        <div class="field">
+          <%= f.label :first_name %><br />
+          <%= f.text_field :fname, autofocus: true %>
+        </div>
 
-      <div class="field">
-        <%= f.label :first_name %><br />
-        <%= f.text_field :fname, autofocus: true %>
-      </div>
+        <div class="field">
+          <%= f.label :last_name %><br />
+          <%= f.text_field :lname, autofocus: true %>
+        </div>
 
-      <div class="field">
-        <%= f.label :last_name %><br />
-        <%= f.text_field :lname, autofocus: true %>
-      </div>
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+        <div class="field password-confirm">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
-      </div>
+        <div class="modal-footer">
+          <%= f.submit "Sign up", class: 'form-btn btn btn-small btn-success' %>
+        </div>
+      <% end %>
+    </div>
 
-      <div class="modal-footer">
-        <%= f.submit "Sign up", class: 'btn btn-small btn-success' %>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="modal-footer">
-    <p>Already have an account?
-      <%= link_to "Sign in", "#sign_in", "data-toggle": "modal", "data-dismiss":"modal"%>
-      instead. </p>
+    <div class="modal-footer">
+      <p>Already have an account?
+        <%= link_to "Sign in", "#sign_in", "data-toggle": "modal", "data-dismiss":"modal"%>
+        instead. </p>
+    </div>
   </div>
 </div>

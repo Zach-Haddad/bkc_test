@@ -1,38 +1,39 @@
 <div class="modal fade in" id="sign_in">
+  <div class="modal-container">
+    <div class="modal-header">
+      <button class="close" data-dismiss="modal">x</button>
+      <h2>Sign in</h2>
+    </div>
 
-  <div class="modal-header">
-    <button class="close" data-dismiss="modal">x</button>
-    <h2>Sign in</h2>
-  </div>
-
-  <div class="modal-body">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
-
-      <% if devise_mapping.rememberable? -%>
+    <div class="modal-body">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true %>
         </div>
-      <% end -%>
 
-      <div class="modal-footer">
-        <%= f.submit "Log in", class: 'btn btn-small btn-success' %>
-      </div>
-    <% end %>
-  </div>
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
 
-  <div class="modal-footer">
-    <p>Don't have an account?
-      <%= link_to "Sign up", "#sign_up", "data-toggle": "modal", "data-dismiss":"modal"%>
-      free today. </p>
+        <% if devise_mapping.rememberable? -%>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="modal-footer button">
+          <%= f.submit "Sign in", class: 'form-btn btn btn-small btn-success' %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="modal-footer">
+      <p>Don't have an account?
+        <%= link_to "Sign up", "#sign_up", "data-toggle": "modal", "data-dismiss":"modal"%>
+        free today. </p>
+    </div>
   </div>
 </div>
