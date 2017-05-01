@@ -3,7 +3,11 @@ class PostsController < ApplicationController
 
   def index
     # avoid n + 1 queries, include author to access fname/lname
-    @posts = Post.order(created_at: :desc).includes(:author).includes(:comments)
+    @posts = Post
+              .paginate(:page => params[:page])
+              .order(created_at: :desc)
+              .includes(:author)
+              .includes(:comments)
     render :index
   end
 

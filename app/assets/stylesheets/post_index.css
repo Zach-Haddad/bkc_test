@@ -4,6 +4,8 @@
 
 .main-content {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
@@ -52,4 +54,13 @@
 /*navbar*/
 .user-id {
   width: 100px;
+}
+
+.post-table {
+  min-height: 420px;
+}
+
+.pagination {
+  margin: 0 auto;
+  margin-top: 20px;
 }

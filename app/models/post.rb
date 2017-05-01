@@ -9,4 +9,5 @@ class Post < ActiveRecord::Base
   )
 
   has_many :comments, inverse_of: :post
+  self.per_page = 10
 end
