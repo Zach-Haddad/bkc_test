@@ -49,7 +49,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.order(created_at: :asc)
+    @comments = @post
+                .comments
+                .paginate(:page => params[:page])
+                .order(created_at: :asc)
     render :show
   end
 

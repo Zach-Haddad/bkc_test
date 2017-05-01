@@ -9,4 +9,6 @@ class Comment < ActiveRecord::Base
     foreign_key: :user_id,
     inverse_of: :comments
   )
+
+  self.per_page = 10
 end

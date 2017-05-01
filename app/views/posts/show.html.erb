@@ -32,6 +32,8 @@
   <% end %>
 </div>
 
+<%= will_paginate @comments %>
+
 <div class="add-comment">
 <% if current_user %>
     <!-- <%= link_to "Add Comment", new_post_comment_url(@post) %> -->
