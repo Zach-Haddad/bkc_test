@@ -1,0 +1,36 @@
+<div class="modal fade in" id="new_post">
+    <div class="modal-container post-modal">
+      <form action="/posts" method="POST" class="post-form">
+        <input
+          type="hidden"
+          name="authenticity_token"
+          value="<%= form_authenticity_token %>">
+
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">x</button>
+            <h2>New Post</h2>
+          </div>
+
+          <div class="modal-body">
+            <label>
+              Title:
+              <input id="new-post-title" class="post-title" name="post[title]">
+            </label>
+            <br/>
+            <br/>
+
+            <label>
+              Content:
+              <br/>
+              <textarea rows="4" cols="50" class="post-body" name="post[body]"></textarea>
+            </label>
+          </div>
+        <br>
+
+          <div class="modal-footer">
+            <input type="Submit" value="Submit" id="submit" class="btn btn-info form-btn">
+          </div>
+
+      </form>
+    </div>
+</div>

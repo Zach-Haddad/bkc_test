@@ -20,3 +20,11 @@
 .form-btn{
   width: 90%;
 }
+
+.post-modal{
+  width: 50%;
+}
+
+#new-post-title{
+  width: 100%;
+}
