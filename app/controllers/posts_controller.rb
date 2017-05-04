@@ -7,7 +7,7 @@ class PostsController < ApplicationController
               .paginate(:page => params[:page])
               .order(created_at: :desc)
               .includes(:author)
-              .includes(:comments)
+              .includes(comments: [:author])
     render :index
   end
 

@@ -17,10 +17,9 @@
     <p>No comments to display</p>
   <% end %>
   <% @comments.each do |comment| %>
-    <% author = comment.author %>
     <div class="comment">
       <div class="comment-body"><%=comment.body%></div>
-      <div class="comment-author">Posted by: <%=author.fname + ' ' + author.lname%></div>
+      <div class="comment-author">Posted by: <%=comment.author.fname + ' ' + comment.author.lname%></div>
 
       <div class="author-options">
         <% if current_user == comment.author %>
