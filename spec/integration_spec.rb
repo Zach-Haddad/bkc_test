@@ -7,6 +7,7 @@ feature "signing up" do
     expect(page).to have_content "Sign up"
   end
 
+  # test written before implementing modals
   feature "signing up a user" do
     before(:each) do
       visit new_user_registration_url

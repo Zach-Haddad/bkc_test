@@ -17,13 +17,15 @@ RSpec.describe User, type: :model do
 
   describe "validations" do
     it { should validate_presence_of(:fname) }
+    it { should validate_presence_of(:lname) }
+    it { should validate_presence_of(:email) }
   end
 end
 
 RSpec.describe Post, type: :model do
   describe "associations" do
-    it { should belong_to(:author)}
-    it { should have_many(:comments)}
+    it { should belong_to(:author) }
+    it { should have_many(:comments) }
   end
 
   describe "validations" do
@@ -35,8 +37,8 @@ end
 
 RSpec.describe Comment, type: :model do
   describe "associations" do
-    it { should belong_to(:author)}
-    it { should belong_to(:post)}
+    it { should belong_to(:author) }
+    it { should belong_to(:post) }
   end
 
   describe "validations" do
