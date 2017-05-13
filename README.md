@@ -1,4 +1,4 @@
-# Ben Kinney Companies Code Sample
+# Rails Message Board
 
 [Live](https://bkcsample.herokuapp.com/)
 
