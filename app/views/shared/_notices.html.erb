@@ -1,0 +1,7 @@
+<div class="notices">
+  <% if flash[:notices] %>
+    <% flash[:notices].each do |notice| %>
+      <%= notice %>
+    <% end %>
+  <% end %>
+</div>

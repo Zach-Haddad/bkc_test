@@ -15,21 +15,8 @@
 
   <div class="wrap">
 
-    <div class="errors">
-      <% if flash[:errors] %>
-        <% flash[:errors].each do |error| %>
-          <%= error %>
-        <% end %>
-      <% end %>
-    </div>
-
-    <div class="notices">
-      <% if flash[:notices] %>
-        <% flash[:notices].each do |notice| %>
-          <%= notice %>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render "shared/errors" %>
+    <%= render "shared/notices" %>
 
     <div class="navbar navbar-default">
       <div class="container">
@@ -60,15 +47,8 @@
 
 
   </div>
-    <div class="navbar-default footer">
-        <div class="container">
-          <p class="navbar-text pull-left">Created By Zach Haddad</p>
 
-          <a href='https://github.com/Zach-Haddad' target="_blank"><i class="fa fa-github-square fa-3x pull-right" aria-hidden="true"></i></a>
-          <a href='https://linkedin.com/in/zach-haddad' target="_blank"><i class="fa fa-linkedin-square fa-3x pull-right" aria-hidden="true"></i></a>
-          <a href='http://zach-haddad.com' target="_blank"><i class="fa fa-folder fa-3x pull-right" aria-hidden="true"></i></a>
-        </div>
-    </div>
+  <%= render "shared/footer" %>
 
 </body>
 </html>
